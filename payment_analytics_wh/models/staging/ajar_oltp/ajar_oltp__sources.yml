@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: ajar_oltp_accounts
+    database: ajar-kw
+    schema: raw_accounts
+    tables:
+      - name: customer_accounts
+
+  - name: ajar_oltp_payments
+    database: ajar-kw
+    schema: payments_data
+    tables:
+      - name: payment_methods
+      - name: yesterday_payment
