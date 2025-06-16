@@ -14,6 +14,7 @@ payments as (
 
    select
       p.* 
+      ,kyc_status
       from payments p
         join accounts a on p.account_id = p.account_id
     where kyc_status <> 'Rejected'

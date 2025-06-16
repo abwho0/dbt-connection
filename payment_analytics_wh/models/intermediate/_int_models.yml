@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: int_payments_filtered_accounts
+    description: >
+      Cleaned payments joined with account info, filtered to original accounts only.
+    columns:
+      - name: payment_id
+        description: Unique ID of the payment
+        tests:
+          - not_null
+          - unique
+
+      - name: account_id
+        description: Linked account identifier
+        tests:
+          - not_null
