@@ -12,4 +12,4 @@ sources:
     schema: payments_data
     tables:
       - name: payment_methods
-      - name: yesterday_payment
+      - name: yesterday_payments
