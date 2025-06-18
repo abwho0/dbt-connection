@@ -40,3 +40,5 @@ models:
   staging:
     ajar_oltp:
       +materialized: view
+  marts:
+    +materialized: table 

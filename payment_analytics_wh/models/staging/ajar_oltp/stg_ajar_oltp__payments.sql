@@ -21,6 +21,7 @@ renamed as (
             when offline = true then 'offline'
             else 'online'
         end as payment_type
+        ,currency
 
         -- numerics
         ,amount
