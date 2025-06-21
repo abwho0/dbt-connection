@@ -16,7 +16,7 @@ payments as (
       p.* 
       ,kyc_status
       from payments p
-        join accounts a on p.account_id = p.account_id
+        join accounts a on p.account_id = a.account_id
     where kyc_status <> 'Rejected'
 
 )

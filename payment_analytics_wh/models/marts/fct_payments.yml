@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: fct_payments
+    description: >
+      Fact table for payments at the transaction grain, joined with relevant account,date, country and method info.
+    columns:
+      - name: payment_id
+        description: Unique identifier of the payment
+        tests:
+          - unique
+          - not_null
+
+      - name: account_id
+        description: Foreign key to account
+        tests:
+          - not_null
+
+      # - name: payment_method_id
+      #   description: Foreign key to payment method
+      #   tests:
+      #     - not_null
+
+      # - name: amount
+      #   description: Amount of the payment in base currency
+      #   tests:
+      #     - not_null
+      #     - dbt_utils.expression_is_true:
+      #         expression: "amount > 0"
+
+      # - name: status
+      #   description: Payment status (e.g., captured, pending)
+      #   tests:
+      #     - not_null
+      #     - accepted_values:
+      #         values: ['Captured', 'Pending', 'Not_captured', 'Canceled', 'Cancelled']

@@ -37,8 +37,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   payment_analytics_wh:
-  staging:
-    ajar_oltp:
-      +materialized: view
-  marts:
-    +materialized: table 
+    staging:
+      ajar_oltp:
+        +materialized: view
+    marts:
+      +materialized: table 

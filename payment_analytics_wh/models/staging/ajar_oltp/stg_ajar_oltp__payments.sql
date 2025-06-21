@@ -18,8 +18,9 @@ renamed as (
         -- strings
         ,status as payment_status
         ,case
-            when offline = true then 'offline'
-            else 'online'
+            when offline = true then 'Offline'
+            when offline = false then 'Online'
+            else 'Unknown'
         end as payment_type
         ,currency
 

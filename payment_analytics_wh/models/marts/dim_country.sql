@@ -1,4 +1,4 @@
--- dim_countries.sql
+-- dim_country.sql
 
 with countries as (
     select 

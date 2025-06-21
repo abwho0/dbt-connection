@@ -15,7 +15,10 @@ renamed as (
 
         -- strings
         ,name as payment_method_name
-        ,display_name as display_name
+        ,case 
+        when display_name = 'knet' then 'KNET'
+        when display_name = 'card_credit_debit' then 'Credit Card'
+        end as display_name
         ,provider_name
         ,country_code 
 
