@@ -3,7 +3,7 @@ with
 
 source as (
 
-    select * from {{ source('ajar_oltp_payments','yesterday_payments') }}
+    select * from {{ source('ajar_oltp_payments','oltp_payments') }}
 
 ),
 
@@ -41,6 +41,7 @@ renamed as (
 
 
     from source
+    where updated_at >= '2023-01-01'
 
 )
 

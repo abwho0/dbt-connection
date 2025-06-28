@@ -1,5 +1,4 @@
 ---fct_payments joined on captured_date with dim_date
-
 SELECT
      p.payment_id 
     ,p.amount
@@ -32,3 +31,7 @@ LEFT JOIN {{ ref('dim_accounts') }} a ON p.account_id = a.account_id
 LEFT JOIN {{ ref('dim_payment_methods') }} pm ON p.payment_method_id = pm.payment_method_id
 LEFT JOIN {{ ref('dim_country') }} c ON p.currency = c.currency
 LEFT JOIN {{ ref('dim_date') }} d ON p.captured_date_kwt = d.date_day
+
+{% if is_incremental() %}
+WHERE p.updated_at_kwt > (SELECT max(updated_at_kwt) FROM {{ this }})
+{% endif %}

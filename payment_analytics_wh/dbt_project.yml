@@ -40,5 +40,11 @@ models:
     staging:
       ajar_oltp:
         +materialized: view
+    intermediate:
+        +materialized: incremental
+        +unique_key: payment_id
+        +on_schema_change: sync_all_columns
     marts:
-      +materialized: table 
+      +materialized: table
+      +unique_key: payment_id
+      +on_schema_change: sync_all_columns
