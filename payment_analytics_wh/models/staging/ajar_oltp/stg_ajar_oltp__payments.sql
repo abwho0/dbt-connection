@@ -38,8 +38,6 @@ renamed as (
         ,DATETIME(TIMESTAMP(updated_at), "Asia/Kuwait") AS updated_at_kwt
         ,DATETIME(TIMESTAMP(captured_at), "Asia/Kuwait") AS captured_at_kwt
 
-
-
     from source
     where updated_at >= '2023-01-01'
 
